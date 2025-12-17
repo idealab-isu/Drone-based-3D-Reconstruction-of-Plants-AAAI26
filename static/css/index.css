@@ -731,6 +731,14 @@ a:focus {
   outline-offset: 2px;
 }
 
+/* Placeholder circle for team images */
+.placeholder-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  margin: 0 auto 0.75rem auto;
+}
 
 /* Print styles */
 @media print {
