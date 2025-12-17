@@ -1,80 +1,72 @@
-# Academic Project Page Template
+# Drone-based 3D Reconstruction of Plants in Field Conditions using Neural Radiance Fields
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+This repository accompanies the paper:
 
-A clean, responsive template for academic project pages.
+**Drone-based 3D Reconstruction of Plants in Field Conditions using Neural Radiance Fields**  
+Accepted at the *First International Workshop on AI in Agriculture (AgriAI)*,  
+co-located with **AAAI 2026**.
+
+Project website:  
+https://idealab-isu.github.io/Drone-based-3D-Reconstruction-of-Plants-AAAI26/
+
+---
+
+## Overview
+
+Accurate 3D reconstruction of plants in outdoor agricultural environments is challenging due to occlusion, illumination variation, wind-induced motion, and complex canopy geometry. This work investigates the effectiveness of **Neural Radiance Fields (NeRFs)** for reconstructing field-grown plants using imagery captured from multiple sensing platforms.
+
+We compare three data collection modalities:
+
+- **Drone-based imagery** (DJI Inspire 2 + Zenmuse X5S)
+- **Handheld imagery** (iPhone 16 Pro)
+- **Ground-based 360° imagery** (TerraSentia robot + Insta360 X4)
+
+The resulting NeRF reconstructions are evaluated using a consistent image-based comparison pipeline to assess reconstruction fidelity under real-world field conditions.
+
+---
+
+## Key Contributions
+
+- Systematic comparison of drone, handheld, and 360° imagery for outdoor plant NeRF reconstruction  
+- Demonstration that **drone-based imagery yields the highest geometric fidelity** for field-scale plant reconstruction  
+- Quantitative evaluation using **PSNR, SSIM, and LPIPS** computed from camera-aligned real and rendered views  
+- Public release of **resulting 3D reconstructions** to support transparency and qualitative inspection
+
+---
+
+## 3D Reconstruction Outputs
+
+The **resulting 3D point clouds generated from NeRF reconstructions** are publicly available on Hugging Face:
+
+🔗 **Point Cloud Outputs**  
+https://huggingface.co/datasets/ShambhaviJoshi/Drone_based_3D_Reconstruction_of_Plants_AAAI26
+
+These files represent:
+- Final reconstructed point clouds derived from NeRF models
+- Outputs corresponding to different sensing modalities and crop plots
 
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+---
 
+## Method Summary
 
+1. Image sequences are captured using each sensing modality
+2. Camera poses are estimated using **COLMAP**
+3. NeRF models are trained using the estimated camera parameters
+4. Final reconstructions are exported as 3D point clouds
+5. Reconstruction quality is assessed using image-based metrics
 
-## Start using the template
-To start using the template click on `Use this Template`.
+Full methodological details are provided in the paper.
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+---
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+<!--
+## Citation
 
-## What's New
-
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
-
-## Components
-
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
-
-## Customization
-
-The HTML file has TODO comments showing what to replace:
-
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
-
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
-
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
-
-## Tips
-
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
-
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
-
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+```bibtex
+@inproceedings{joshi2026drone,
+  title     = {Drone-based 3D Reconstruction of Plants in Field Conditions using Neural Radiance Fields},
+  author    = {Joshi, Shambhavi and Rairdin, Ashlyn and Tranel, Elizabeth and Ganapathysubramanian, Baskar},
+  booktitle = {Proceedings of the First International Workshop on AI in Agriculture (AgriAI), AAAI},
+  year      = {2026}
+}
